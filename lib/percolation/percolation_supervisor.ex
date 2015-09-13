@@ -11,7 +11,7 @@ defmodule Percolation.PercolatorSupervisor do
       supervisor(Percolation.CellSupervisor, [ref])
     ]
 
-    opts = [strategy: :one_for_one]
+    opts = [strategy: :one_for_all]
     supervise(children, opts)
   end
 
